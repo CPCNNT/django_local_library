@@ -135,4 +135,4 @@ dmypy.json
 *.sqlite3
 
 # project data
-*.xml
+data.xml

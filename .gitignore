@@ -133,3 +133,6 @@ dmypy.json
 
 # Database
 *.sqlite3
+
+# project data
+data.xml

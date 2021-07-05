@@ -36,7 +36,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', '!++ts44y(t!4c9^!%kw@88vvgk%ez#
 # DEBUG = True
 DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['local-library-writindjango.herokuapp.com', '127.0.0.1']
 
 # Application definition
 

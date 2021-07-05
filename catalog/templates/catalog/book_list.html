@@ -1,0 +1,26 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Book List</h1>
+
+    {% if book_list %}
+    <ul>
+
+      {% for book in book_list %}
+      <li>
+        <a href="{{ book.get_absolute_url }}">{{ book.title }}</a> ({{book.author}}){% if perms.catalog.can_update_book %} | <a href="{% url 'book-update' book.pk %}">Update</a>{% endif %}{% if perms.catalog.can_delete_book %} - <a href="{% url 'book-delete' book.pk %}">Delete</a>{% endif %}
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>There are no books in the library.</p>
+    {% endif %}
+{% endblock %}
+
+{% block create %}
+  {% if perms.catalog.can_create_book %}
+  <p></p>
+  <a class="link-button" href="{% url 'book-create' %}">Create book</a>
+  {% endif %}
+{% endblock %}

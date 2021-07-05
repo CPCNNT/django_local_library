@@ -1,0 +1,26 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Language List</h1>
+
+    {% if language_list %}
+    <ul>
+
+      {% for language in language_list %}
+      <li>
+        <a href="{{ language.get_absolute_url }}">{{ language }}</a>{% if perms.catalog.can_update_language %} | <a href="{% url 'language-update' language.pk %}">Update</a>{% endif %}{% if perms.catalog.can_delete_language %} - <a href="{% url 'language-delete' language.pk %}">Delete</a>{% endif %}
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+    <p>There are no languages available.</p>
+    {% endif %}
+{% endblock %}
+
+{% block create %}
+  {% if perms.catalog.can_create_language %}
+  <p></p>
+  <a class="link-button" href="{% url 'language-create' %}">Create language</a>
+  {% endif %}
+{% endblock %}

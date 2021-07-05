@@ -1,0 +1,31 @@
+.sidebar-nav {
+  margin-top: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.link-button {
+  outline: none;
+  text-decoration: none;
+  display: inline-block;
+  width: auto;
+  text-align: center;
+  line-height: 2;
+  color: deepskyblue;
+  border-width: 4px;
+  border-style: ridge;
+  border-color: lightgrey;
+}
+
+.link-button:link, .link-button:visited, .link-button:focus {
+  background: white;
+}
+
+.link-button:hover {
+  color: orange;
+}
+
+.link-button:active {
+  background: red;
+  color: white;
+}

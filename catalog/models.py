@@ -207,8 +207,9 @@ class Author(models.Model):
     """Model representing an author."""
     first_name = models.CharField(max_length=100)  # first name = given name = 名
     last_name = models.CharField(max_length=100)  # last name = family name = surname = 姓
-    date_of_birth = models.DateField(null=True, blank=True)
-    date_of_death = models.DateField('Died', null=True, blank=True)
+    date_of_birth = models.DateField(null=True, blank=True, help_text='Enter the date in the form of yyyy-mm-dd')
+    date_of_death = models.DateField('Died', null=True, blank=True,
+                                     help_text='Enter the date in the form of yyyy-mm-dd')
 
     class Meta:
         ordering = ['last_name', 'first_name']

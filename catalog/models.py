@@ -11,6 +11,8 @@ The model has a single CharField field (name), which is used to describe the gen
 and has some help_text. At the end of the model we declare a __str__() method, which simply returns the name of the 
 genre defined by a particular record. No verbose name has been defined, so the field will be called Name in forms.
 """
+
+
 class Genre(models.Model):
     """Model representing a book genre (e.g. Science Fiction, Non Fiction)."""
     name = models.CharField(max_length=200, help_text="Enter a book genre (e.g. Science Fiction, French Poetry etc.)")
@@ -42,6 +44,8 @@ Some things to consider:
 1. Should "language" be associated with a Book, BookInstance, or some other object?
 2. Should the different languages be represented using model, a free text field, or a hard-coded selection list?
 """
+
+
 class Language(models.Model):
     """Model representing a Language (e.g. English, French, Japanese, etc.)"""
     name = models.CharField(max_length=200,
@@ -203,6 +207,8 @@ The model defines an author as having a first name, last name, date of birth, an
 specifies that by default the __str__() returns the name in last name, firstname order. The get_absolute_url() method 
 reverses the author-detail URL mapping to get the URL for displaying an individual author.
 """
+
+
 class Author(models.Model):
     """Model representing an author."""
     first_name = models.CharField(max_length=100)  # first name = given name = 名
